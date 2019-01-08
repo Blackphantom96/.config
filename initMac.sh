@@ -47,6 +47,9 @@ CASKS=(
     intellij-idea
     homebrew/cask-versions/firefox-developer-edition
     java8
+    visual-studio-code
+    astah-professional
+
 )
 
 echo "Installing cask apps..."
@@ -85,7 +88,7 @@ defaults write com.apple.screensaver askForPassword -int 1
 defaults write com.apple.screensaver askForPasswordDelay -int 0
 
 # Show filename extensions by default
-defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Enable tap-to-click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
