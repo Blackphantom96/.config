@@ -12,7 +12,10 @@ brew update
 # Install Bash 4
 brew install bash
 
+brew tap heroku/brew && brew install heroku
+
 PACKAGES=(
+    cask
     git
     npm
     python
@@ -22,7 +25,6 @@ PACKAGES=(
     vim
     wget
     octave
-    heroku
     maven
     tldr
     zsh
@@ -37,18 +39,14 @@ wget https://raw.githubusercontent.com/Blackphantom96/.config/master/.zshrc
 echo "Cleaning up..."
 brew cleanup
 
-echo "Installing cask..."
-brew install caskroom/cask/brew-cask
-
 CASKS=(
     iterm2
     spectacle
     vlc
     intellij-idea
-    homebrew/cask-versions/firefox-developer-edition
-    java8
+    firefox
     visual-studio-code
-    astah-professional
+    font-source-code-pro
 
 )
 
@@ -56,7 +54,6 @@ echo "Installing cask apps..."
 brew cask install ${CASKS[@]}
 
 echo "Installing fonts..."
-brew tap caskroom/fonts
 FONTS=(
     font-inconsolidata
     font-roboto
