@@ -32,10 +32,7 @@ brew cleanup
 
 echo "Installing fonts..."
 FONTS=(
-    font-inconsolidata
-    font-roboto
-    font-clear-sans
-    font-source-code-pro
+    homebrew/cask-fonts/font-source-code-pro
 )
 
 brew cask install ${FONTS[@]}
