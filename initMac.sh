@@ -9,49 +9,26 @@ fi
 # Update homebrew recipes
 brew update
 
-# Install Bash 4
-brew install bash
 
-brew tap heroku/brew && brew install heroku
+export HOMEBREW_NO_AUTO_UPDATE=1
 
-PACKAGES=(
-    cask
-    git
-    npm
-    python
-    python3
-    pypy
-    tree
-    vim
-    wget
-    octave
-    maven
-    tldr
-    zsh
-)
-
-echo "Installing packages..."
-brew install ${PACKAGES[@]}
-
-echo "Download zsh config"
-wget https://raw.githubusercontent.com/Blackphantom96/.config/master/.zshrc
+Cask=('homebrew/cask-versions/adoptopenjdk8' 'keka' 'google-chrome' 'soapui' 'rstudio' 'r' 'firefox' 'spectacle' 'vlc' 'intellij-idea' 'visual-studio-code' 'iterm2' 'docker' 'postman');
+ 
+NoCask=('wget' 'bash' 'httpie' 'git' 'tree' 'vim' 'tldr' 'maven' 'zsh' 'npm' 'cowsay' 'gradle');
+ 
+  
+for c in "${Cask[@]}"; do
+echo "brew cask install $c";
+brew cask install $c
+done
+ 
+for nc in "${NoCask[@]}"; do
+echo "brew install $nc";
+brew install $nc
+done
 
 echo "Cleaning up..."
 brew cleanup
-
-CASKS=(
-    iterm2
-    spectacle
-    vlc
-    intellij-idea
-    firefox
-    visual-studio-code
-    font-source-code-pro
-
-)
-
-echo "Installing cask apps..."
-brew cask install ${CASKS[@]}
 
 echo "Installing fonts..."
 FONTS=(
@@ -60,19 +37,8 @@ FONTS=(
     font-clear-sans
     font-source-code-pro
 )
+
 brew cask install ${FONTS[@]}
-
-echo "Installing global npm packages..."
-npm install -g create-react-app
-npm install -g spaceship-prompt
-
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-
-
-echo "Configure zsh"
-git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
-ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 
 
 echo "Configuring OSX..."
@@ -94,9 +60,6 @@ defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 # Disable "natural" scroll
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 
-echo "Creating folder structure..."
-[[ ! -d Wiki ]] && mkdir Wiki
-[[ ! -d Workspace ]] && mkdir Workspace
 
 echo "Bootstrapping complete"
 
