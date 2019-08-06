@@ -14,7 +14,7 @@ export HOMEBREW_NO_AUTO_UPDATE=1
 
 Cask=('homebrew/cask-versions/adoptopenjdk8' 'keka' 'google-chrome' 'soapui' 'rstudio' 'r' 'firefox' 'spectacle' 'vlc' 'intellij-idea' 'visual-studio-code' 'iterm2' 'docker' 'postman');
  
-NoCask=('wget' 'bash' 'httpie' 'git' 'tree' 'vim' 'tldr' 'maven' 'zsh' 'npm' 'cowsay' 'gradle');
+NoCask=('wget' 'scala'  'bash' 'httpie' 'git' 'tree' 'vim' 'tldr' 'maven' 'zsh' 'npm' 'cowsay' 'gradle');
  
   
 for c in "${Cask[@]}"; do
