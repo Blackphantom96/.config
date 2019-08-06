@@ -38,8 +38,12 @@ FONTS=(
 brew cask install ${FONTS[@]}
 
 
-echo "Configuring OSX..."
+echo "Installing zsh"
 
+chsh -s /bin/zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+echo "Configuring OSX..."
 # Set fast key repeat rate
 defaults write NSGlobalDomain KeyRepeat -int 0
 
