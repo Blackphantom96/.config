@@ -1,17 +1,15 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-alias howto='tldr'
+
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/juanmoreno/.oh-my-zsh"
-#export JAVA_HOME="/usr/bin/java"
-#export DKUJAVABIN="/usr/bin/java"
-##source /Users/juanmoreno/.gitignore.plugin.zsh/gitignore.plugin.zsh
+
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="spaceship"
-
+#ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -28,8 +26,14 @@ ZSH_THEME="spaceship"
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
 
+# Uncomment the following line to automatically update without prompting.
+# DISABLE_UPDATE_PROMPT="true"
+
 # Uncomment the following line to change how often to auto-update (in days).
 # export UPDATE_ZSH_DAYS=13
+
+# Uncomment the following line if pasting URLs and other text is messed up.
+# DISABLE_MAGIC_FUNCTIONS=true
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -64,16 +68,23 @@ ZSH_THEME="spaceship"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-  git
-  gitignore
-  npm
-  brew
-  python
-  osx
-  vscode
-)
-
+plugins=(git
+        osx
+        mvn
+        npm
+        node
+        gitignore
+        docker
+        gradle
+        httpie
+        colored-man-pages
+	      history
+        gradle
+        brew
+        command-not-found
+        jsontools
+        git-flow
+	)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -93,9 +104,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# ssh
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
-
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
@@ -105,9 +113,33 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# heroku autocomplete setup
-HEROKU_AC_ZSH_SETUP_PATH=/Users/juanmoreno/Library/Caches/heroku/autocomplete/zsh_setup && test -f $HEROKU_AC_ZSH_SETUP_PATH && source $HEROKU_AC_ZSH_SETUP_PATH;export PATH="/usr/local/opt/sqlite/bin:$PATH"
-
   # Set Spaceship ZSH as a prompt
   autoload -U promptinit; promptinit
-  prompt spaceship
+  prompt pure
+  PROMPT='%(?.%F{green}⪢.%F{red}⪢)%f '
+export JAVA_HOME=$(/usr/libexec/java_home)
+export HOME="/Users/juanmoreno"
+export IP_ADDRESS="10.100.26.81"
+export HOUSTON_HOME="/usr/local/payu"
+export MAVEN_HOME_LOCAL="$HOME/.maven"
+export POL_HOME="$HOUSTON_HOME/POL"
+export POL_ITERACIONES="671775"
+export POL_SAL="-8c=GfMBX8U!!VkuX"
+export POL_KEY="GuEDXkTZ.6!@u.v2mq3"
+export SKIP_LIQUIBASE="true"
+export GS_HOME="$HOUSTON_HOME/gigaspaces-xap-premium-10.0.1"
+export JSHOMEDIR="$HOUSTON_HOME/gigaspaces-xap-premium-10.0.1"
+export M2_HOME="$HOME/.m2"
+export M2_REPO="$HOME/.m2/repository"
+export CLUSTER_HOME="$HOUSTON_HOME/cluster"
+export M2="$M2_HOME/bin"
+export TOMCAT_MAF_HOME="$POL_HOME/tomcat-maf-7"
+export MAVEN_HOME="$POL_HOME/maven-1.0.2"
+export MAVEN_HOME_1="$POL_HOME/maven-1.1"
+export JAVA_HOME_7="$POL_HOME/jdk1.7.0_XX"
+export JPDA_ADDRESS=8099
+export JPDA_TRANSPORT="dt_socket"
+export ALEXANDRIA_HOME="$HOUSTON_HOME/alexandria"
+export UTS_HOME="$HOUSTON_HOME/uts"
+export HOST_INTERNAL_ADDRESS="host.docker.internal"
+export NIC_ADDR="#en0:ip#"
