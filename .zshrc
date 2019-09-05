@@ -78,7 +78,7 @@ plugins=(git
         gradle
         httpie
         colored-man-pages
-	      history
+	history
         gradle
         brew
         command-not-found
